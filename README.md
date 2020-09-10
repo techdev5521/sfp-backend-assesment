@@ -8,7 +8,7 @@
 5. After completing the assessment be sure to push all your changes up to GitHub and send meeks@sfp.net the link to your repository.
 
 ## Directions
-There are three PHP classes you need to create. All files and folders have been set up for you. Commit regularly for bonus points.
+There are three PHP classes you need to create. All files and folders have been set up for you. Commit regularly so we can see your progress :D
 
 | Class | Math |
 |-|-|
