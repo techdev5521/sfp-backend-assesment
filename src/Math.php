@@ -40,7 +40,7 @@ namespace Sfp;
                 }
             }
 
-            return $sum / count($parsedData);
+            return round($sum / count($parsedData), 10);
         }
 
         /**
