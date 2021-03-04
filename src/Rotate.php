@@ -31,4 +31,34 @@ namespace Sfp;
         {
             $rotationAmount = $rotationAmount ?? $this->{$rotationAmount};
         }
+
+        /**
+         * Returns string of data or false if data cannot be loaded.
+         *
+         * @return bool|string String of data or false
+         */
+        private function loadData()
+        {
+            // Check if file exists.
+            $dataFileNotFound = !file_exists($this->dataFile);
+            if ($dataFileNotFound) {
+                return false;
+            }
+
+            // Get data from contents.
+            try {
+                $dataFileStream = fopen($this->dataFile, 'r');
+                if (false === $dataFileStream) {
+                    return false;
+                }
+
+                $data = stream_get_contents($dataFileStream);
+
+                fclose($dataFileStream);
+            } catch (Exception $e) {
+                return false;
+            }
+
+            return $data;
+        }
     }
