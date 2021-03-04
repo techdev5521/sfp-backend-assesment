@@ -143,6 +143,9 @@ namespace Sfp;
             $parsedData = [];
             for ($i = 1; $i < count($records) - 1; ++$i) {
                 $parsedLine = $this->parseLine($records[$i]);
+                if (false === $parsedData) {
+                    return false;
+                }
                 $parsedData[$i - 1] = $parsedLine;
             }
 
