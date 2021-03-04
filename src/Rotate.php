@@ -7,7 +7,7 @@ namespace Sfp;
      *
      * @author Justin Campbell <campb303@purdue.edu>
      */
-    class Extend
+    class Rotate
     {
         private $rotationAmount;
         private $dataFile;
