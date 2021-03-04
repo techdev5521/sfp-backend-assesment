@@ -26,10 +26,12 @@ namespace Sfp;
          * Returns a left rotated array.
          *
          * @param null|int $rotationAmount The number of times to perform a left rotation. (Default $this->rotationAmount)
+         *
+         * @return array|bool Rotated array or false on failure.
          */
-        public function execute($rotationAmount)
+        public function execute($rotationAmount = null)
         {
-            $rotationAmount = $rotationAmount ?? $this->{$rotationAmount};
+            $rotationAmount = $rotationAmount ?? $this->rotationAmount;
         }
 
         /**
