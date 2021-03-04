@@ -14,3 +14,5 @@ git clone https://github.com/techdev5521/sfp-backend-assesment.git
 ```bash
 php index.php
 ```
+
+[This article](https://blog.theodo.com/2019/07/vscode-php-development/) was used to setup a basic development environment.
