@@ -26,6 +26,21 @@ namespace Sfp;
          */
         public function execute()
         {
+            // Load data from file.
+            $data = $this->loadData() or exit("Could not load data from data file at {$this->dataFile}");
+
+            // Parse data.
+            $parsedData = $this->parseData($data) or exit('Could not parse data.');
+
+            // Calculate average of data where 'accept' === true.
+            $sum = 0;
+            foreach ($parsedData as $record) {
+                if ($record['accept']) {
+                    $sum += $record['value'];
+                }
+            }
+
+            return $sum / count($parsedData);
         }
 
         /**
