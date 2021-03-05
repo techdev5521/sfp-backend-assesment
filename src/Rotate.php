@@ -27,11 +27,33 @@ namespace Sfp;
          *
          * @param null|int $rotationAmount The number of times to perform a left rotation. (Default $this->rotationAmount)
          *
-         * @return array|bool Rotated array or false on failure.
+         * @return array Rotated array.
          */
         public function execute($rotationAmount = null)
         {
             $rotationAmount = $rotationAmount ?? $this->rotationAmount;
+
+            // Load data from file.
+            $data = $this->loadData() or exit("Could not load data from data file at {$this->dataFile}");
+
+            // Parse data.
+            $parsedData = json_decode($data);
+            if (null === $parsedData) {
+                exit('Could not parse data.');
+            }
+
+            // Check for correct data type.
+            $dataNotArray = !is_array($parsedData);
+            if ($dataNotArray) {
+                exit('Data is not an array.');
+            }
+
+            // Rotate data.
+            for ($i = 0; $i < $rotationAmount; ++$i) {
+                $this->leftRotateOnce($parsedData) or exit('Could not rotate array.');
+            }
+
+            return $parsedData;
         }
 
         /**
