@@ -57,7 +57,7 @@ namespace Sfp;
                 $data = stream_get_contents($dataFileStream);
 
                 fclose($dataFileStream);
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 return false;
             }
 
