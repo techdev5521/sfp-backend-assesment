@@ -3,7 +3,7 @@
 namespace Sfp;
 
     /**
-     * Singleton class to compute average values of valid data.
+     * Singleton class to rotate an array.
      *
      * @author Justin Campbell <campb303@purdue.edu>
      */
