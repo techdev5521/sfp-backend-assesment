@@ -7,7 +7,10 @@ require_once 'src/Rotate.php';
 require_once 'src/Extend.php';
 
 $math = new Sfp\Math('assets/tabular.csv');
-echo "Result of Sfp\\Math->execute(): {$math->execute()}".PHP_EOL;
+$mathResult = $math->execute();
+echo 'Result of Sfp\\Math->execute(): '.PHP_EOL;
+var_dump($mathResult);
+echo PHP_EOL;
 
 $rotate = new Sfp\Rotate(1, 'assets/rotate.json');
 $rotateResult = $rotate->execute();
