@@ -63,4 +63,35 @@ namespace Sfp;
 
             return $data;
         }
+
+        /**
+         * Left rotate array by one.
+         *
+         * @param array &$array Pointer to the array to rotate.
+         *
+         * @return bool True on success, false on failure.
+         */
+        private function leftRotateOnce(&$array)
+        {
+            // Check if array is too small to rotate.
+            if (count($array) <= 1) {
+                return false;
+            }
+
+            // Store first array element.
+            $firstElement = $array[0];
+
+            // Get array length.
+            $array_length = count($array);
+
+            // Shift values left.
+            for ($i = 0; $i < $array_length - 1; ++$i) {
+                $array[$i] = $array[$i + 1];
+            }
+
+            // Add first array element to end.
+            $array[$array_length - 1] = $firstElement;
+
+            return true;
+        }
     }
